@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Bootstrap 101 Template</title>
+    <title>Add new Burks!</title>
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -16,19 +16,40 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+    <!-- Google maps -->
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"></script>
   </head>
+  
   <body>
     <a href="index.htm">&lt;-</a>
     <div>    
-      <form id="addForm">
-        Adress <input type="text"> <br>
-        Antal Burkar <input type="tel"> <br>
-        <button onclick="Submit">Lägg till</button>
+      <form class="form-inline" id="addForm">
+        <div class="form-group">
+          <input class="form-control" id="searchTextField" type="text" placeholder="Adress" required>
+        </div>        
+        <div class="form-group">
+          <button type="button" class="btn btn-default btn-lg form-control" style="width: auto;">10+</button>
+          <button type="button" class="btn btn-default btn-lg form-control" style="width: auto;">25+</button>
+          <button type="button" class="btn btn-default btn-lg form-control" style="width: auto;">50+</button>
+          <button type="button" class="btn btn-default btn-lg form-control" style="width: auto;">100+</button>
+        </div>      
+        <input class="btn btn-default btn-block btn-lg" type="submit" value="Submit">
       </form>
     </div>
+    
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
+    
+    <script>
+      function initialize() {
+        var input = document.getElementById('searchTextField');
+        var autocomplete = new google.maps.places.Autocomplete(input);
+      }
+
+      google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
   </body>
 </html>
