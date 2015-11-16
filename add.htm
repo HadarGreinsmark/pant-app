@@ -24,17 +24,13 @@
   <body>
     <a href="index.htm">&lt;-</a>
     <div>    
-      <form class="form-inline" id="addForm">
+      <form class="form-inline" id="addForm" oninput="amount.value=rangeInput.value" style="padding:10px;">
         <div class="form-group">
           <input class="form-control" id="searchTextField" type="text" placeholder="Adress" required>
         </div>        
-        <div class="form-group">
-          <button type="button" class="btn btn-default btn-lg form-control" style="width: auto;">10+</button>
-          <button type="button" class="btn btn-default btn-lg form-control" style="width: auto;">25+</button>
-          <button type="button" class="btn btn-default btn-lg form-control" style="width: auto;">50+</button>
-          <button type="button" class="btn btn-default btn-lg form-control" style="width: auto;">100+</button>
-        </div>      
-        <input class="btn btn-default btn-block btn-lg" type="submit" value="Submit">
+        <input type="range" id="rangeInput" name="rangeInput" onchange="updateTextInput(this.value);" min="10" max="200" value="10" step="5">
+        <output name="amount" id="output" for="rangeInput">10</output>      
+        <input class="btn btn-default btn-block btn-lg" type="submit" value="Lägg till">
       </form>
     </div>
     
@@ -50,6 +46,14 @@
       }
 
       google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+
+    <script type="text/javascript">
+      function updateTextInput(val) {
+        if (val == 200)
+        document.getElementById('output').value="200+"; 
+ 
+      }
     </script>
   </body>
 </html>
