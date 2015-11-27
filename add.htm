@@ -21,16 +21,22 @@
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"></script>
   </head>
   
-  <body>
+  <body style="height: 100vh; position: fixed; width: 100%;">
     <a href="index.htm">&lt;-</a>
-    <div>    
-      <form class="form-inline" id="addForm" oninput="amount.value=rangeInput.value" style="padding:10px;">
+    <div class="container-fluid" style="height: 100vh;">    
+      <form class="form-block" id="addForm" oninput="amount.value=rangeInput.value" style="position:relative; height: 100vh;">
         <div class="form-group">
           <input class="form-control" id="searchTextField" type="text" placeholder="Adress" required>
         </div>        
-        <input type="range" id="rangeInput" name="rangeInput" onchange="updateTextInput(this.value);" min="10" max="200" value="10" step="5">
-        <output name="amount" id="output" for="rangeInput">10</output>      
-        <input class="btn btn-default btn-block btn-lg" type="submit" value="Lägg till">
+        <h2 style="display: inline-block; margin-top: 0px;">Antal burks:</h2>
+        <output name="amount" id="output" for="rangeInput" style="font-size: 2em; display: inline-block;">10</output>      
+        <input type="range" id="rangeInput" name="rangeInput" onchange="updateTextInput(this.value);" min="10" max="200" value="10" step="5" style="margin-bottom: 1em";>
+        <div class="form-group">
+          <textarea class="form-control" rows="5" placeholder="Optional Description"></textarea>
+        </div>
+        <div class="form-group"> 
+          <input class="btn btn-default btn-block btn-lg" type="submit" value="Lägg till" style="position: absolute; bottom: 2em;">
+        </div>
       </form>
     </div>
     
