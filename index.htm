@@ -25,7 +25,7 @@
         padding: 0;
       }
       #map {
-        height: 80%;
+        height: 87%;
       }
       .gmnoprint {
         display:none;
@@ -84,8 +84,9 @@
         color: red;
       }
       h1 {
-        font-size: 200%;
+        font-size: 150%;
         padding: .2em;
+        margin: 0px;
       }
       #close-items {
         width: 100%;
@@ -162,6 +163,18 @@
         map.fitBounds(bounds);
       });
       // [END region_getplaces]
+
+      markers.push(new google.maps.Marker({
+        position: {lat: 59.339497, lng: 18.072462},
+        map: map
+      }));
+      markers.push(new google.maps.Marker({
+        position: {lat: 59.343633, lng: 18.070402},
+        map: map
+      }));
+
+
+      
     }
   </script>
 </head>
