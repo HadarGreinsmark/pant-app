@@ -25,7 +25,7 @@
   
   <body style="height: 100vh; position: fixed; width: 100%;">
     <div id="menuEmptyBar"></div>
-    <table id="menu" style="width: 100%; font-size: 1.2em;">
+    <table id="menu" style="width: 100%; font-size: 1.2em; ">
     <tr>
       <td style="width:30%;"><a href="index.html">Avbryt</a></td>
       <td style="font-weight: bold;text-align: center; width:40%;">PantApp</td>
@@ -33,7 +33,7 @@
     </tr>
     </table>
 
-    <div class="container-fluid" style="height: 100vh;">    
+    <div class="container-fluid" style="height: 100vh; margin-top: 10px;" >    
       <form class="form-block" id="addForm" oninput="amount.value=rangeInput.value" style="position:relative; height: 100vh;">
         <div class="form-group">
           <input class="form-control" id="searchTextField" type="text" placeholder="Adress" required>
@@ -42,10 +42,11 @@
         <output name="amount" id="output" for="rangeInput" style="font-size: 2em; display: inline-block;">10</output>      
         <input type="range" id="rangeInput" name="rangeInput" onchange="updateTextInput(this.value);" min="10" max="200" value="10" step="5" style="margin-bottom: 1em";>
         <div class="form-group">
-          <textarea class="form-control" rows="5" placeholder="Valfri beskrivning"></textarea>
+          <textarea class="form-control" rows="5" placeholder="Valfri beskrivning" style="background-color: #ffd618; border-color: #0069b4;"></textarea>
         </div>
+        <img src="a.gif" width="100%">
         <div class="form-group"> 
-          <input class="btn btn-default btn-block btn-lg" type="submit" value="Lägg till" style="position: absolute; bottom: 3em;">
+          <input class="btn btn-default btn-block btn-lg" type="submit" value="Lägg till" style="position: absolute; bottom: 4em;">
         </div>
       </form>
     </div>

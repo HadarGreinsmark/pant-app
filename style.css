@@ -1,4 +1,10 @@
 @charset "UTF-8";
+
+p, h1, h2, h3 {
+	color: #0069b4;
+
+}
+
 td, th {
     padding: 10px;
 }
@@ -13,8 +19,14 @@ h3 {
 }
 
 body {
-	padding: 20px 0px 0 0;
+	background-color: #ffd618;
 }
+
+input[type="text"], textarea, input[type="submit"] {
+		background-color: #ffd618;
+		border-color: #0069b4;
+}
+
 /*
 #personal {
 	background-color: blue;
